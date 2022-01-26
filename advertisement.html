@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertisement</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+    a:hover {
+        color: #000000;
+    }
+
+    .break {
+        font-size: 0;
+        width: 15px; height: 15px;
+        clear: both;
+    }
+
+    @media only screen and (max-width: 620px) {
+        /* For mobile phones: */
+        #header,#content, #content.post, video{
+            width: 100%;
+        }
+    }
+
+    #header ul {
+        float: center;
+        list-style-type: none;
+        padding: 10px 0;
+        margin-left: -5px;
+    }
+
+    #header ul li {
+        float: center;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        padding: 0 15px;
+        border-left: 1px solid #252525;
+    }
+
+    #header .logo {
+        padding: 18px 18px 40px;
+        float: center;
+    }
+
+    #header .logo h1 {
+        font-family: "Lucida Sans";
+        font-size: 2.5em;
+        text-transform: uppercase;
+    }
+
+    #header .logo h1 a {
+        color: #252525;
+    }
+
+    #header .logo p {
+        color: black;
+        font-weight: bold;
+        padding-left: 10px;
+    }
+
+    #header .ad468x60 {
+        float: right;
+        padding: 16px 10px;
+    }
+
+    #content {
+        float: left;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    #content .post {
+        width: 100%;
+        height: fit-content;
+        float: center;
+        padding: 10px;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+    #content .post h2 {
+        font-family: Georgia;
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    #content .post h2 a {
+        color: #252525;
+    }
+
+    #content .post .date {
+        font-size: 0.9em;
+        font-family: Georgia;
+        color: #808080;
+        margin-bottom: 15px;
+    }
+
+    #content .post p {
+        margin-bottom: 100px;
+        line-height: 1.4em;
+    }
+    </style>
+</head>
+<body>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-red fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SouthernFoodie</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="mr-auto navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="advertisement.html">Advertisement</a></li>
+                    <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order.html">Order</a></li>
+                    <li class="nav-item"><a class="nav-link" href="links.html">Links</a></li>
+                    <li class="nav-item"><a class="nav-link" href="authors.html">Authors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentations.html">Documentations</a></li>
+                    <li class="nav-item" style="visibility: hidden;"><a class="nav-link" href="documentations.html">Documentations12</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="pl-0 col-lg-2">
+                <!-- Add Something Here -->
+                <nav class="nav flex-column p-2 pt-4 d-none d-lg-block sticky-top">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="advertisement.html">Advertisement</a></li>
+                    <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order.html">Order</a></li>
+                    <li class="nav-item"><a class="nav-link" href="links.html">Links</a></li>
+                    <li class="nav-item"><a class="nav-link" href="authors.html">Authors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentations.html">Documentations</a></li>
+                    <li class="nav-item" style="visibility: hidden;"><a class="nav-link" href="documentations.html">Documentations12</a></li>
+                </nav>
+            </div>
+            
+            <!-- middle column -->
+            <div class="col-lg-8">
+                <div class="container pt-3 pb-5 text-center bg-light">
+    
+                        <!-- BEGIN header -->
+                        <div id="header">
+                          <ul>
+                          <div class="logo">
+                            <h1><a>The Foodie News</a></h1>
+                          </div>
+                          <div class="break"></div>
+                    
+                          <div class="break"></div>
+                        </div>
+                        <!-- END header -->
+                        <!-- BEGIN content -->
+                        <div id="content">
+                        
+                          <!-- begin post -->
+                          <div class="post">
+                            <video  controls>
+                                <source src="video/v1.mp4" type="video/mp4">
+                                Your browser does not support HTML video.
+                              </video>
+                              <h2><a>Nestlé NEW Musang King Stick Ice Cream spotted and it tastes just like the REAL THING! 🥳</a></h2>
+                            <p class="date">Posted on 19th January 2022</p>
+                            <p>Killer aroma and creamy smooth texture, as if you’re eating a real Musang King durian 🤤💛<br>
+                                Grab it on the go and satisfy your durian cravings anytime & anywhere. <br>
+                                📍 Available nationwide now at any Nestlé Ice Cream freezer, Shopee and Lazada at RM6.50 only! </p>
+                          </div>
+                          <!-- end post -->
+
+                          
+                         
+                          <!-- begin post -->
+                          <div class="post">
+                            <video  controls>
+                                <source src="video/v2.mp4" type="video/mp4">
+                                Your browser does not support HTML video.
+                              </video>
+                            <h2><a>The long-awaited peppery favourite with a side of awesome gifts!  
+                                Join the Gifts of Prosperity contest now to win amazing prizes. ! 🤤</a></h2>
+                            <p class="date">Posted on 18th January 2022</p>
+                            <p>McDonald's Malaysia is serving up their Prosperity Burger once again! This time, to roar in the year of the Tiger as Malaysians claw for one of their favourite seasonal burgers from the fast-food chain.<br>
+                                Grab it on the go and satisfy your durian cravings anytime & anywhere. <br>
+                                📍 Available nationwide now at any Mc McDonald outlets  at RM17.90 only! </p>
+                          </div>
+                          <!-- end post -->
+                        
+                          <div class="post">
+                            <video controls>
+                                <source src="video/v3.mp4" type="video/mp4">
+                                Your browser does not support HTML video.
+                              </video>
+                            <h2><a>Cheesy Poppers Pizza in the Hut! 🧀🍕</a></h2>
+                            <p class="date">Posted on 18th January 2022</p>
+                            <p>Just pull, dip, and pop the yumminess into your mouth to enjoy! 🤩🤩<br>
+
+                                For a limited time only, try it today. Available for Dine-In, contactless Delivery and contactless Takeaway in all Pizza Hut Malaysia outlets*.<br>
+                                
+                                *Promotion starting dates in Sabah will vary due to current COVID-19 situation. <br>
+                                📍 Available nationwide now at any Mc McDonald outlets </p>
+                          </div>
+                          <!-- end post -->
+
+                           <!-- begin post -->
+                         <div class="post">
+                            <audio controls>
+                                <source src="audio/a1.mp3" type="audio/mpeg">
+                              Your browser does not support the audio element.
+                              </audio>
+                            <h2><a>The KFC Golden Egg Crunch is back to Malaysia!! 😍</a></h2>
+                            <p class="date">Posted on 17th January 2022</p>
+                            <p>KFC, the world’s largest fried chicken restaurant chain, is returning to Malaysia with its signature product, The KFC Golden Egg Crunch. <br>
+                                📍 Available nationwide now at any KFC outlets or can order through KFC App !</p>
+                          </div>
+                          <!-- end post -->
+                        
+                         
+                        </div>
+                        <!-- END content -->
+                    
+                    
+                </div>
+                <!-- Footer -->
+                <footer class="p-3 bg-dark d-none d-lg-block">
+                    <p class="text-center text-white">Copyright &copy; SouthernFoodie 2021</p>
+                </footer>
+            </div>
+        
+            <!-- right column -->
+            <aside class="col-lg-2 side text-left p-3 pl-lg-1 pr-lg-1">
+                <div class="container pt-lg-3 sticky-top">
+                    <h3>HOURS</h3>
+                    <div class="row">
+                        <div class="col-12">
+                            <strong>M-F</strong> 8:00am-6pm<br>
+                            <strong>Sa-Su</strong> 9am-5pm
+                        </div>
+                    </div>
+                    <br>
+                    <h3>LOCATION</h3>
+                    <!-- Map -->
+                    <div class="row">
+                        <div class="col-12">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.389026111186!2d103.67954781453749!3d1.5336803613849685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da73c109632e0b%3A0x74cda51bf210c304!2z5Y2X5pa55aSn5a2m5a2m6Zmi!5e0!3m2!1szh-CN!2smy!4v1641568232971!5m2!1szh-CN!2smy" style="border:1px solid lightgrey; border-radius: 10px; width: 100%; max-height: 100%;" allowfullscreen="" loading="lazy"></iframe>
+                            <small class="text-justify">PTD 64888, Jalan Selatan Utama km 15, Taman Perusahaan Ringan Pulai, 81300 Skudai, Johor</small>
+                        </div>
+                    </div>
+                    <br>
+                    <h3>CONTACT</h3>
+                    <div class="row">
+                        <div class="col-12">
+                            <i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;012-345 6789
+                        </div>
+                        <div class="col-12">
+                            <i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;<a href="mailto:sfoodie@gmail.com" class="text-danger">sfoodie@gmail.com</a>
+                        </div>
+                    </div>
+                    <!-- Contact Information -->
+                </div>
+            </aside>
+        </div>
+    </div>
+    <footer class="p-3 bg-dark d-block d-lg-none">
+        <p class="text-center text-white">Copyright &copy; SouthernFoodie 2021</p>
+    </footer>
+</body>
+</html>

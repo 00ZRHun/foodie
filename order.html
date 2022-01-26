@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <style>
+    fieldset.fieldset-border {
+        border: 1px groove #ddd;
+        padding: 0 1.4em 1.4em 1.4em;
+        margin: 0 0 1.5em 0;
+        -webkit-box-shadow:  0px 0px 0px 0px #000;
+                box-shadow:  0px 0px 0px 0px #000;
+    }
+
+    legend.fieldset-border {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: left;
+        width:auto;
+        padding:0 10px;
+        border-bottom:none;
+    }
+
+    fieldset ul {
+        list-style-type: none;
+    }
+
+    .captcha-box { 
+        border-radius: 5px; 
+        border: 2px solid #cac6c6; 
+        padding: 2rem; 
+        max-width: 400px; 
+        margin: 0 auto; 
+    }
+
+    #canvas {
+        width: 100%;
+        max-width: 200px;
+        height: 60px;
+    }
+
+    </style>
+</head>
+<body>
+<!-- navigation bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-red fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">SouthernFoodie</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="mr-auto navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="advertisement.html">Advertisement</a></li>
+                <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+                <li class="nav-item active"><a class="nav-link" href="order.html">Order</a></li>
+                <li class="nav-item"><a class="nav-link" href="links.html">Links</a></li>
+                <li class="nav-item"><a class="nav-link" href="authors.html">Authors</a></li>
+                <li class="nav-item"><a class="nav-link" href="documentations.html">Documentations</a></li>
+                <li class="nav-item" style="visibility: hidden;"><a class="nav-link" href="documentations.html">Documentations12</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- left column -->
+        <div class="pl-0 col-lg-2">
+            <!-- Add Something Here -->
+            <nav class="nav flex-column p-2 pt-4 d-none d-lg-block sticky-top">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="advertisement.html">Advertisement</a></li>
+                <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+                <li class="nav-item active"><a class="nav-link" href="order.html">Order</a></li>
+                <li class="nav-item"><a class="nav-link" href="links.html">Links</a></li>
+                <li class="nav-item"><a class="nav-link" href="authors.html">Authors</a></li>
+                <li class="nav-item"><a class="nav-link" href="documentations.html">Documentations</a></li>
+                <li class="nav-item" style="visibility: hidden;"><a class="nav-link" href="documentations.html">Documentations12</a></li>
+            </nav>
+        </div>
+        
+        <!-- middle column -->
+        <div class="col-lg-8 middle">
+            <div class="container pt-3">
+                <!-- Order & Pick up -->
+                <fieldset class="fieldset-border">
+                    <legend class="text-danger fieldset-border"><h3>Order Now</h3></legend>
+                    <form id="orderform" action="mailto:sfoodie@gmail.com?subject=New Order!" method="POST" class="pt-3 pb-3 needs-validation" enctype="text/plain" novalidate>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="ordertype">Order Type:</label>
+                            <div class="col-sm-10 align-self-center">
+                                <select name="ordertype" id="ordertype" class="form-control">
+                                    <option value="1">Self Pick Up</option>
+                                    <option value="2">Delivery</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="fullname">Full Name:</label>
+                            <div class="col-sm-10 align-self-center">
+                                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Full Name" required>
+                                <div class="invalid-feedback">
+                                    Please fill out this field correctly.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="phonenumber">Phone Number:</label>
+                            <div class="col-sm-10 align-self-center">
+                                <input type="tel" class="form-control" id="phonenumber" name="phonenumber" placeholder="012-3456789" required>
+                                <div class="invalid-feedback">
+                                    Please fill out this field correctly.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="email">Email Address:</label>
+                            <div class="col-sm-10 align-self-center">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
+                                <div class="invalid-feedback">
+                                    Please fill out this field correctly.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row" id="orderdetail">
+                            <label class="col-sm-2 col-form-label" for="picktime">Pick Up Time:</label>
+                            <div class="col-sm-10 align-self-center">
+                                <input type="datetime-local" class="form-control" id="picktime" name="picktime" required>
+                                <div class="invalid-feedback">
+                                    Please fill out this field correctly.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Payment method:</label>
+                            <div class="col-sm-10 align-self-center">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="payment" id="cod" value="cod" checked>
+                                    <label class="form-check-label" for="cod">
+                                        Cash On Delivery
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="payment" id="cc" value="cc">
+                                    <label class="form-check-label" for="cc">
+                                        Credit Card
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <h5 class="d-inline">My Order List</h5>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-sm btn-outline-info btn-additem">Add Item</button>&nbsp;<button type="button" class="btn btn-sm btn-outline-warning btn-clearitem">Clear All Items</button>
+                        </div>
+                        <ul id="myItems">
+                            <li>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="items" name="item[]" placeholder="BBQ Chicken Pizza - 1, add cheese" required>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-danger btn-delitem" type="button"><i class="fas fa-times"></i></button>
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please fill out this field correctly.
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="items" name="item[]" placeholder="BBQ Chicken Pizza - 1, add cheese" required>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-danger btn-delitem" type="button"><i class="fas fa-times"></i></button>
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please fill out this field correctly.
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <br><hr>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="notifyway" id="notifyemail" value="email" checked>
+                            <label class="form-check-label" for="notifyemail">
+                                <small>Receive Email Notification</small>
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="notifyway" id="notifycall" value="call">
+                            <label class="form-check-label" for="notifycall">
+                                <small>Receive Phone Call</small>
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="notifyway" id="notifysms" value="sms">
+                            <label class="form-check-label" for="notifysms">
+                                <small>Receive SMS</small>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="terms" id="terms" value="agree">
+                            <label class="form-check-label" for="terms">
+                                <small>I have read and fully agree with the <a href="#" data-toggle="modal" data-target="#termModal">Terms & Conditions</a></small>
+                            </label>
+                        </div>
+                        <br><br>
+                        <div class="form-group mt-3 text-center">
+                            <button type="reset" class="btn btn-warning mb-2">Reset</button>
+                            <button type="submit" class="btn btn-primary btn-submit mb-2" disabled>Submit Order</button>
+                        </div>
+                    </form>
+                </fieldset>
+
+                <!-- Feedback -->
+                <fieldset class="fieldset-border">
+                    <legend class="text-danger fieldset-border"><h3>Feedback to Us</h3></legend>
+                    <br>
+                    <p class="text-center">Please leave your comments here to improve our service</p>
+                    <div class="container">
+                        <form id="feedbackform" action="mailto:sfoodie@gmail.com?subject=New Feedback!" method="POST" class="pt-3 pb-3 needs-validation" enctype="text/plain" novalidate>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label" for="feedbackfullname">Full Name:</label>
+                                <div class="col-sm-10 align-self-center">
+                                    <input type="text" class="form-control" id="feedbackfullname" name="fullname" placeholder="Full Name" required>
+                                    <div class="invalid-feedback">
+                                        Please fill out this field correctly.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label" for="feedbackemail">Email Address:</label>
+                                <div class="col-sm-10 align-self-center">
+                                    <input type="email" class="form-control" id="feedbackemail" name="email" placeholder="Email Address" required>
+                                    <div class="invalid-feedback">
+                                        Please fill out this field correctly.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="comments" id="feedbackcomment" placeholder="Start your comment here..." cols="30" rows="10" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please fill out this field correctly.
+                                </div>
+                            </div>
+                            <p>State the star grade to convey your satisfication with our services (5 stars is the best):</p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="satisfication" id="one" value="one">
+                                <label class="form-check-label" for="one">
+                                    1 star
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="satisfication" id="two" value="two">
+                                <label class="form-check-label" for="two">
+                                    2 stars
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="satisfication" id="three" value="three">
+                                <label class="form-check-label" for="three">
+                                    3 stars
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="satisfication" id="four" value="four">
+                                <label class="form-check-label" for="four">
+                                    4 stars
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline mb-3">
+                                <input class="form-check-input" type="radio" name="satisfication" id="five" value="five" checked>
+                                <label class="form-check-label" for="five">
+                                    5 stars
+                                </label>
+                            </div>
+                            <hr><br>
+                            <div class="form-group text-center">
+                                <div class="captcha-box">
+                                    <canvas id="canvas"></canvas>
+                                    <input type="password" name="code" class="text-center form-control" required>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group text-center">
+                                <button type="reset" class="btn btn-warning mb-2">Reset</button>
+                                <button type="submit" class="btn btn-primary btn-submit mb-2">Submit Feedback</button>
+                            </div>
+                        </form>
+                    </div>
+                </fieldset>
+            </div>
+            <!-- Footer -->
+            <footer class="p-3 bg-dark d-none d-lg-block">
+                <p class="text-center text-white">Copyright &copy; SouthernFoodie 2021</p>
+            </footer>
+
+            <!-- Back To Top -->
+            <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out" data-abc="true"></a>
+            <!-- /Back To Top -->
+        </div>
+    
+        <!-- right column -->
+        <aside class="col-lg-2 side text-left p-3 pl-lg-1 pr-lg-1">
+            <div class="container pt-lg-3 sticky-top">
+                <h3>HOURS</h3>
+                <div class="row">
+                    <div class="col-12">
+                        <strong>M-F</strong> 8:00am-6pm<br>
+                        <strong>Sa-Su</strong> 9am-5pm
+                    </div>
+                </div>
+                <br>
+                <h3>LOCATION</h3>
+                <!-- Map -->
+                <div class="row">
+                    <div class="col-12">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.389026111186!2d103.67954781453749!3d1.5336803613849685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da73c109632e0b%3A0x74cda51bf210c304!2z5Y2X5pa55aSn5a2m5a2m6Zmi!5e0!3m2!1szh-CN!2smy!4v1641568232971!5m2!1szh-CN!2smy" style="border:1px solid lightgrey; border-radius: 10px; width: 100%; max-height: 100%;" allowfullscreen="" loading="lazy"></iframe>
+                        <small class="text-justify">PTD 64888, Jalan Selatan Utama km 15, Taman Perusahaan Ringan Pulai, 81300 Skudai, Johor</small>
+                    </div>
+                </div>
+                <br>
+                <h3>CONTACT</h3>
+                <div class="row">
+                    <div class="col-12">
+                        <i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;012-345 6789
+                    </div>
+                    <div class="col-12">
+                        <i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;<a href="mailto:sfoodie@gmail.com" class="text-danger">sfoodie@gmail.com</a>
+                    </div>
+                </div>
+                <!-- Contact Information -->
+            </div>
+        </aside>
+    </div>
+</div>
+<footer class="p-3 bg-dark d-block d-lg-none">
+    <p class="text-center text-white">Copyright &copy; SouthernFoodie 2021</p>
+</footer>
+    
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="termModal" tabindex="-1" role="dialog" aria-labelledby="termModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="termModalLabel">Terms & Conditions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body small">
+            <ol type="I">
+                <strong><li>Placing the order</li></strong> 
+                <p>To complete an Order, please follow the onscreen instructions after clicking 'Submit Order'. You may be required to provide additional details for us to complete your Order. You are required to review and confirm that all the information you provide, including the amounts, delivery details, personal details. An Order is successfully placed when you receive an email confirmation containing your Order receipt from us.</p>
+                <strong><li>Cancelling an Order</li></strong>  
+                <p>Please contact us immediately via phone call if you wish to cancel your Order after it has been placed.</p>
+                <strong><li>Delivery Areas</li></strong>  
+                <p>You understand that we offer our Goods in specific delivery areas and we vary from delivery area to delivery area.</p>
+                <strong><li>Order Pick-Up</li></strong>  
+                <p>Where available, you will have the option of collecting your Order in-person directly from the our premises ("Pick-Up") instead of having the Order delivered to You. We will prepare the Order by the Collection Time. In some cases, a reasonable delay may be expected. We agrees to hold the Order for you at the our premises for no more than a reasonable period of twenty (20) minutes from the Collection Time (“Holding Time”) and shall not be obliged to provide the Order to you if you fail to Pick-Up your Order within the Holding Time.</p>
+            </ol>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script src="assets/js/jquery-captcha.min.js"></script>
+<script>
+// <!-- Back To Top
+$(document).ready(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 20) {
+            $('#toTopBtn').fadeIn();
+        } else {
+            $('#toTopBtn').fadeOut();
+        }
+    });
+
+    $('#toTopBtn').click(function() {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 1000);
+            return false;
+    });
+});
+// Back To Top -->
+
+const captcha =new Captcha($('#feedbackform #canvas'), {
+    length: 6
+});
+
+$("#ordertype").on("change", function() {
+    var ordertype = $(this).find(":selected").val();
+    var orderdetail = $("#orderform #orderdetail");
+    if (ordertype == 2) {
+        orderdetail.html('<label class="col-sm-2 col-form-label" for="deliaddress">Delivery Address:</label><div class="col-sm-10 align-self-center"><input type="text" class="form-control" id="deliaddress" name="deliaddress" placeholder="Where you are" required><div class="invalid-feedback">Please fill out this field correctly.</div></div>');
+    } else if(ordertype == 1) {
+        orderdetail.html('<label class="col-sm-2 col-form-label" for="picktime">Pick Up Time:</label><div class="col-sm-10 align-self-center"><input type="datetime-local" class="form-control" id="picktime" name="picktime" required><div class="invalid-feedback">Please fill out this field correctly.</div></div>')
+    }
+});
+
+$('input[name="terms"]').on('change', function() {
+    if ($(this).is(':checked')) {
+        $('#orderform .btn-submit').prop("disabled", false);     
+    } else {
+        $('#orderform .btn-submit').prop("disabled", true);     
+    }
+});
+
+var ul = $("#myItems");
+var liitem = '<li><div class="input-group mb-3"><input type="text" class="form-control" id="items" name="item[]" placeholder="BBQ Chicken Pizza - 1, add cheese" required><div class="input-group-append"><button class="btn btn-outline-danger btn-delitem" type="button"><i class="fas fa-times"></i></button></div></div></li>';
+$(".btn-additem").on("click", function() {
+    ul.append(liitem);
+});
+
+$(".btn-clearitem").on("click", function() {
+    ul.empty();
+    ul.append(liitem);
+});
+
+$(".btn-delitem").on("click", function() {
+    alert("Item has been removed.");
+    $(this).closest('li').remove();
+});
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        var id = form.id;
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+          $('#'+id+' input.form-control:invalid').first().focus();
+        } else {
+            if (id == "feedbackform") {
+                const ans = captcha.valid($('#'+id+' input[name="code"]').val());
+                if (!ans) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    $('#'+id+' input[name="code"]').focus();
+                }
+            } 
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+</body>
+</html>
